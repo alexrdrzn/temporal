@@ -10,9 +10,12 @@ down = Button(24, pull_up=True, bounce_time=0.1)
 state = "RUNNING"
 
 def pressed():
-    toCSV = ["3", "06:45"]
+    toCSV = []
     with open("settings/elevator.csv", "a+", newline="") as file:
         writerCSV = csv.writer(file)
+        timestamp = str(datetime.datetime.utcnow()) + " UTC"
+        toCSV.append("Pressed")
+        toCSV.append(timestamp)
         writerCSV.writerow(toCSV)
     return
 
