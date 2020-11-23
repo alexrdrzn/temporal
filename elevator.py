@@ -17,6 +17,7 @@ def pressed():
         toCSV.append("Pressed")
         toCSV.append(timestamp)
         writerCSV.writerow(toCSV)
+        print("Pressed")
     return
 
 up.when_pressed = pressed
